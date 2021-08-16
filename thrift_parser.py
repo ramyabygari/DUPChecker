@@ -190,6 +190,8 @@ thrift_parser.ignore("import " + restOfLine)
 thrift_parser.ignore("syntax " + restOfLine)
 thrift_parser.ignore("service " + restOfLine)
 thrift_parser.ignore("const " + restOfLine)
+thrift_parser.ignore("namespace " + restOfLine)
+thrift_parser.ignore("include " + restOfLine)
 #thrift_thrift_parser.ignore("map<" + restOfLine)  # don't handle map<x, x> currently, TBD
 
 # contents = open("../hbase/hbase-thrift/src/main/resources/org/apache/hadoop/hbase/thrift/Hbase.thrift").read()
