@@ -132,4 +132,5 @@ parser.ignore(comment)
 parser.ignore("option " + restOfLine)
 parser.ignore("import " + restOfLine)
 parser.ignore("syntax " + restOfLine)
+parser.ignore("syntax=" + restOfLine)
 parser.ignore("map<" + restOfLine)  # don't handle map<x, x> currently, TBD

@@ -21,6 +21,7 @@ class Java_file:
             for t in self.ast.types:
                 if type(t) == javalang.tree.ClassDeclaration:
                     class_name = t.name
+                    print("class name ", class_name)
                     jc = Java_class(class_name, t)
                     jc.parseClassAst(self.contents)
                     self.java_classes[class_name] = jc
@@ -44,7 +45,6 @@ class Java_class:
         self.methods = {}
         self.methods_source = {}
         self.package_name = ""
-        self.class_name = ""
         self.upper_class_name = ""
         self.path = ""
 
@@ -63,7 +63,7 @@ class Java_class:
             for i in range(len(body)):
                 b = body[i]
                 start_index = b.position.line - 1
-
+                print("java class ", self.class_name)
                 if i < len(body) - 1:
                     end_index = body[i + 1].position.line
                 else:
@@ -118,11 +118,13 @@ class Proto_file:
         self.contents = contents
         self.messages = {}
         self.enums = {}
+        self.package = None
 
     def parseAst(self):
         for item in self.ast:
             if item[0] == "package":
                 self.package = item[1]
+                print("ITEM 0 ", self.path, item[0], item[1])
             if item[0] == "message":
                 name = item[1]
                 ast = item[2]
@@ -178,6 +180,12 @@ class Proto_file:
                         key, field_name, new_enum[field_name]
                     )
                 )
+                zeros = [v for v in new_enum.values() if v == 0]
+                print("ZEROS: ", zeros)
+                if len(zeros) == 0:
+                    print("ENUMPROBLEM ", "Add Field in Enum {} Key: {} Value {} Path: {}".format(
+                        key, field_name, new_enum[field_name], self.path
+                    ))
             if len(deleted_field_keys) > 0:
                 deleted_field_enum_keys.append(key)
             for field_name in deleted_field_keys:
@@ -216,6 +224,9 @@ class Proto_file:
         changed_field_msg_keys = []
         added_field_msg_keys = []
         deleted_field_msg_keys = []
+        # compare package
+        if  old_proto_file.package is not None and self.package is not None  and old_proto_file.package != self.package:
+            print("PACKAGEPROBLEM: old: {} new: {} path: {}".format(old_proto_file.package, self.package, self.path))
         for add_msg_key in added_msg_keys:
             print("INFO Added Message {}".format(add_msg_key))
         for deleted_msg_key in deleted_msg_keys:
@@ -571,12 +582,12 @@ class Version_class:
                 ):  
                     try:
                         contents = open(path).read()
-                        # if path.endswith(".java"):
-                        #     if (not file_types) or "java" in file_types:
-                        #         ast = javalang.parse.parse(contents)
-                        #         jf = Java_file(path, ast, contents)
-                        #         self.java_files[path] = jf
-                        #         jf.parseAst()
+                        if path.endswith(".java"):
+                            if (not file_types) or "java" in file_types:
+                                ast = javalang.parse.parse(contents)
+                                jf = Java_file(path, ast, contents)
+                                self.java_files[path] = jf
+                                jf.parseAst()
                         if path.endswith(".proto"):
                             if (not file_types) or "proto" in file_types:
                                 # print(path)
