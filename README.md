@@ -58,7 +58,9 @@ Checkout DUPChecker to your local machine.
     `python3 run_experiment.py` 
 
     The results will be output to files under log folder with application's name as prefix.
-
+4. Generate Table 6 in the paper:
+    `python3 explore.py`
+    
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
