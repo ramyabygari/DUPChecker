@@ -46,8 +46,9 @@ Checkout DUPChecker to your local machine.
     `python3 checker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
 ### Enum Checker
 
-`$java -jar EnumChecker.jar > output.log`
-`$grep "============start enum================" -A 5 output.log `
+    `$java -jar EnumChecker.jar > output.log`
+
+    `$grep "============start enum================" -A 5 output.log `
 
 ## Reproduce Experiments in the Paper Section 6.2.2
 
