@@ -1,7 +1,8 @@
-# DUPChecker: Serialization Library Compatibility Checker
+# DUPChecker: 
 
 ## What can DUPChecker do:
 
+### Serialization Library Compatibility Checker
 DUPChecker analyzes data syntax defined using standard serialization libraries and detect incompatibility across versions, which can lead to upgrade failures. 
 It focuses on two widely adopted serialization libraries, [Portocol Buffer](https://developers.google.com/protocol-buffers/docs/proto.) and [Apache Thrift](https://diwakergupta.github.io/thrift-missing-guide/).
 
@@ -17,6 +18,9 @@ Protocols evolve over time. Developers can update any protocol to meet the progr
 
 Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `ERROR` by DUPChecker; violating the third rule may lead to failures, which will be referred to as `WARNING` by DUPChecker, if the new version generates data that does not contain its no-longer-required data member. For other type of changes such as changing field type,
 DUPChecker will output `INFO` level information. 
+
+### Checker of enum whose order is used in serialization
+
 
 ## Installation
 
