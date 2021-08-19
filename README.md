@@ -49,6 +49,7 @@ Checkout DUPChecker to your local machine.
     `$java -jar EnumChecker.jar > output.log`
 
     `$grep "============start enum================" -A 5 output.log `
+    
 
 ## Reproduce Experiments in the Paper Section 6.2.2
 
