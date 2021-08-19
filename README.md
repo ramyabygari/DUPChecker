@@ -12,6 +12,8 @@ Protocols evolve over time. Developers can update any protocol to meet the progr
     (2). The tag number of a field has been changed.
 
     (3).  A  required field has been changed to non-required. 
+    
+    (4). Added or deleted an enum with no 0 value.
 
 Violating the first two rules will definitely lead to upgrade failures caused by syntax incompatibility, which will be referred to as `ERROR` by DUPChecker; violating the third rule may lead to failures, which will be referred to as `WARNING` by DUPChecker, if the new version generates data that does not contain its no-longer-required data member. For other type of changes such as changing field type,
 DUPChecker will output `INFO` level information. 
@@ -23,6 +25,8 @@ Checkout DUPChecker to your local machine.
     `git clone git@github.com:jwjwyoung/DUPChecker.git`
 
 ## Usage
+
+### Proto Checker
 1. Prepare the application that you would like to check the consistentcy on the same machine, suppose its path is `path_app`. 
 
 2. Run Script
@@ -36,6 +40,10 @@ Checkout DUPChecker to your local machine.
     e.g. check for thrift file:
 
     `python3 checker.py  --app hbase --thrift --v1 rel/2.2.6 --v2 rel/2.3.3`
+### Enum Checker
+
+`$java -jar EnumChecker.jar > output.log`
+`$grep "============start enum================" -A 5 output.log `
 
 ## Reproduce Experiments in the Paper Section 6.2.2
 
