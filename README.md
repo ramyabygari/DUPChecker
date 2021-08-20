@@ -26,11 +26,11 @@ DUPChecker will output `INFO` level information.
 
 Prerequiste: In Python3, install javalang, numpy, pyparsing with: 
 
-    `pip3 install javalang, numpy, pyparsing`
+    $pip3 install javalang, numpy, pyparsing
     
 Checkout DUPChecker to your local machine.
 
-    `git clone git@github.com:jwjwyoung/DUPChecker.git`
+    $git clone git@github.com:jwjwyoung/DUPChecker.git
 
 ## Usage
 
@@ -88,9 +88,12 @@ Checkout DUPChecker to your local machine.
 1. server config: virtualbox ubnutu 18, 4G RAM, 20G disk. 
 
 3. time distribution: 
+
     1). setup new ubuntu vm - 15~30 min
-    2) install dependencies and download required git repos - 15 min
-    3) run experiements - ~40 min.
+    
+    3) install dependencies and download required git repos - 15 min
+
+    4) run experiements - ~40 min.
     
 ## Contributing
 
