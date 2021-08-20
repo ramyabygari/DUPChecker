@@ -24,6 +24,10 @@ DUPChecker will output `INFO` level information.
 
 ## Installation
 
+Prerequiste: In Python3, install javalang, numpy, pyparsing with: 
+
+    `pip3 install javalang, numpy, pyparsing`
+    
 Checkout DUPChecker to your local machine.
 
     `git clone git@github.com:jwjwyoung/DUPChecker.git`
@@ -53,7 +57,7 @@ Checkout DUPChecker to your local machine.
 
 ## Reproduce Experiments in the Paper Section 6.2.2
 
-1. Checkout the required applications. 
+1. Checkout the required applications in the DUPChecker/ directory.. 
 
       (1). hbase `git clone https://github.com/apache/hbase.git`
       
@@ -64,6 +68,10 @@ Checkout DUPChecker to your local machine.
       (4). hive `git clone https://github.com/apache/hive.git`
 
       (5). impala `git clone https://github.com/apache/impala.git`
+      
+      (6). accumulo `git clone https://github.com/apache/accumulo.git`
+      
+      
 2. Create a log folder
     ` mkdir log`
 
@@ -74,6 +82,15 @@ Checkout DUPChecker to your local machine.
     The results will be output to files under log folder with application's name as prefix.
 4. Generate Table 6 in the paper:
     `python3 explore.py`
+
+##  Evaluation requirement: 
+
+1. server config: virtualbox ubnutu 18, 4G RAM, 20G disk. 
+
+3. time distribution: 
+    1). setup new ubuntu vm - 15~30 min
+    2) install dependencies and download required git repos - 15 min
+    3) run experiements - ~40 min.
     
 ## Contributing
 
