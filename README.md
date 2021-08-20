@@ -86,14 +86,11 @@ Checkout DUPChecker to your local machine.
 ##  Evaluation requirement: 
 
 1. server config: virtualbox ubnutu 18, 4G RAM, 20G disk. 
-
-3. time distribution: 
+2. time distribution: 
 
     1). setup new ubuntu vm - 15~30 min
-    
-    3) install dependencies and download required git repos - 15 min
-
-    4) run experiements - ~40 min.
+    2)install dependencies and download required git repos - 15 min
+    3) run experiements - ~40 min.
     
 ## Contributing
 
