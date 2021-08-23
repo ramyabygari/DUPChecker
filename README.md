@@ -30,7 +30,7 @@ Prerequiste: In Python3, install javalang, numpy, pyparsing with:
     
 Checkout DUPChecker to your local machine.
 
-    $git clone git@github.com:jwjwyoung/DUPChecker.git
+    $git clone https://github.com/jwjwyoung/DUPChecker.git
 
 ## Usage
 
