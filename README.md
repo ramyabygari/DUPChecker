@@ -81,7 +81,7 @@ Checkout DUPChecker to your local machine.
 
     The results will be output to files under log folder with application's name as prefix.
 4. Generate Table 6 in the paper:
-    `python3 explore.py`
+    `python3 export.py`
 
 ##  Evaluation requirement: 
 
