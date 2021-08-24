@@ -90,7 +90,7 @@ Checkout DUPChecker to your local machine.
 
     1). setup new ubuntu vm - 15~30 min
     2)install dependencies and download required git repos - 15 min
-    3) run experiements - ~40 min.
+    3) run experiements - ~60 min.
     
 ## Contributing
 
